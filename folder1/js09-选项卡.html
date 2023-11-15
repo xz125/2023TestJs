@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡案例</title>
+<!-- improt css -->
+<link rel="stylesheet" href="css/tab.css">
+</head>
+<body>
+    <div id="tabBox">
+        <ul id="navBox">
+            <li class="active">编程</li>
+            <li>语言</li>
+            <li>数学</li>
+        </ul>
+        <div class="active">编程使我快乐</div>
+        <div>语言是我优雅</div>
+        <div>数学使我严谨</div>
+    </div>
+    <script>
+      let tabBox = document.getElementById('tabBox');
+      let tavbist = tabBox.getElementsByTagName('div');
+      let navBox = document.getElementById('navBox');
+      let navList = navBox.getElementsByTagName('li');
+      
+      // 循环给三个li绑定点击事件
+      for (let index = 0; index < navList.length; index++) {
+        // 循环给li绑定点击事件的时候，给li增加一个自定义属性
+        navList[index].myIndex = index;
+        navList[index].onclick = function() {
+            changeTab(this.myIndex);
+        }
+      }
+
+      function changeTab(clinkIndex){
+        for(let i = 0; i < navList.length; i++) {
+            let li = navList[i];
+            li.className='';
+            tavbist[i].className='';
+        }
+        navList[clinkIndex].className='active';
+        tavbist[clinkIndex].className='active';
+      }
+    </script>
+</body>
+</html>

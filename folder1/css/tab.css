@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+ul{
+    list-style: none;
+}
+
+#tabBox{
+    box-sizing: border-box;
+    width: 500px;
+    margin: 20px auto;
+
+}
+
+#navBox {
+    /* 使内容水平排列 */
+    display: flex;
+    /* 相对于原来位置向上增加1px，等价于向下移动 */
+    position: relative;
+    top: 1px;
+}
+
+/* 给每个选项卡增加box */
+#navBox li{
+    box-sizing: border-box;
+    /* 设置每行的行高 */
+    line-height: 35px;
+    /* 设置文字与box的距离 */
+    padding: 0 18px;
+    /* 设置不同标签的距离，向右对象间隔为15px */
+    margin-right: 15px;
+    border: 1px solid lightgray;
+}
+
+#navBox li.active{
+    /* 设置li的底部边框为白色 */
+    border-bottom-color: white;
+}
+
+#tabBox>div{
+    /* 初始为不显示 */
+    display: none;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 150px;
+    border: 1px solid lightgray;
+}
+
+/* 增加一个class样式为active */
+#tabBox>div.active{
+    display: block;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隔行变色</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            /* 清除ul默认的 · */
+            list-style: none;
+        }
+        #newsBox{
+            box-sizing: border-box;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            border: 2px solid lightblue;
+        }
+        #newsBox li{
+            line-height: 35px;
+            border-bottom: 1px dashed lightcoral;
+        }
+        /* 去除最后一个li的底边框，即倒数第一个 */
+        #newsBox li:nth-last-child(1){
+            border-bottom: none;
+        }
+        #newsBox li:nth-child(even){
+            background: lightgoldenrodyellow;
+        }
+        #newsBox li:hover{
+            background: lightseagreen;
+        }
+    </style>
+</head>
+<body>
+    <ul id="newsBox">
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+        <li>我是第4个li</li>
+        <li>我是第5个li</li>
+    </ul>
+    <!-- 应该是使用for循环进行操作 -->
+    <script>
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隔行变色进阶</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            /* 清除ul默认的 · */
+            list-style: none;
+        }
+
+        #newsBox{
+            box-sizing: border-box;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            border: 2px none lightblue;
+        }
+        #newsBox li{
+            line-height: 35px;
+            /* text-align: center; */
+            border: 1px none lightcoral;
+        }
+
+         /* 去除最后一个li的底边框，即倒数第一个 */
+         #newsBox li:nth-last-child(1){
+            border-bottom: none;
+        }
+
+        #newsBox li:nth-child(even){
+            background: lightgrey;
+        }
+        #newsBox li:hover{
+            background: lightslategray;
+        }
+    </style>
+</head>
+<body>
+
+    <ul id="newsBox">
+        <li>忽如一夜春风来</li>
+        <li>千树万树梨花开</li>
+        <li>千金散尽还复来</li>
+        <li>将进酒</li>
+        <li>多歧路今安在</li>
+    </ul>
+ 
+
+
+    <script>
+
+    </script>
+</body>
+</html>

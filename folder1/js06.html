@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>判断正负数</title>
+
+    <style>
+        /* 加入共同样式 */
+        #num,
+        #submit{
+            box-sizing: border-box;
+            padding: 0 15px;
+            height: 35px;
+            border:2px solid red;
+        }
+        #submit{
+            /* 增加小手操作 */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="num">
+    <button id="submit">计算</button>    
+
+    <script>
+        // 获取对象
+        let num = document.getElementById("num");
+        let button = document.getElementById("submit");
+
+
+        // 时间绑定
+        button.onclick = function() {
+            let val = num.value;
+            // console.log(val);
+            // console.log(typeof val) // 表示为string类型
+            if(val.length == 0) {
+                // 表示输入为空
+                alert("请输入数值")
+            } else{
+                // console.log(val);
+                // console.log(typeof val) // 表示为number类型
+                val = Number(val);
+                if (!isNaN(val)) {
+                    if (val >= 0) {
+                        alert("输入的是一个正整数");
+                    } else{
+                        alert("输入为负数");
+                    }
+                } else{
+                    alert("请输入数值")
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

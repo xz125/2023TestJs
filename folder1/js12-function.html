@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+</head>
+<body>
+    
+    <script>
+        console.log(ArgTest(10,20,30))
+        function ArgTest() {
+            let nums = arguments.length;
+            let sum = 0;
+            for (let id = 0; id < nums; id++) {
+                sum += arguments[id];
+            }
+            return sum;
+        } 
+    </script>
+</body>
+</html>

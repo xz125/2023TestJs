@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取元素</title>
+</head>
+<body>
+    <div class="tabBox" id="tabBox">
+        <ul class="tab" id="tab">
+            <li>第1个页卡</li>
+            <li>第2个页卡</li>
+            <li>第3个页卡</li>
+        </ul>
+        <div>第1个内容
+            <ul class="news">
+                <li>第1个热门新闻</li>
+                <li>第2个热门新闻</li>
+                <li>第3个热门新闻</li>
+                <li>第4个热门新闻</li>
+                <li>第5个热门新闻</li>
+            </ul>
+        </div>
+        <div>第2个内容
+            <div class="detail"></div>
+        </div>
+        <div>第3个内容</div>
+    </div>
+    
+    <div class="formBox">
+        性别：
+        <br>
+        <input type="radio" value="男" name="sex" checked>男
+        <input type="radio" value="女" name="sex" >女
+        <button id="submit">确定性别</button>
+    </div>
+
+    <script>
+        let tabBox = document.querySelector('.tabBox');
+        // console.log(tabBox);
+
+        // let navList = tabBox.getElementsByTagName('li');
+        let navList = tabBox.querySelector('.tab');
+        console.log(navList);
+
+
+        let sexList = document.getElementsByName('sex');
+        console.log(sexList);
+        let submit = document.getElementById('submit');
+        submit.onclick = function() {
+            let res = '';
+            // for(let i = 0; i < sexList.length; i++) {
+            //     if (sexList[i].checked){
+            //         res = sexList[i].value;
+            //         break;
+            //     }
+            // }
+            sexList.forEach((ele)=>{
+                if (ele.checked){
+                    res = ele.value;
+                }
+            });
+            alert(res);
+            // console.log(res);
+        };
+    </script>
+</body>
+</html>
